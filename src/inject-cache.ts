@@ -29,7 +29,7 @@ async function injectCache(cacheSource: string, cacheOptions: CacheOptions, scra
 
     // Prepare Dancefile to Access Caches
     const dancefileContent = `
-FROM busybox:1
+FROM public.ecr.aws/docker/library/busybox:1
 COPY buildstamp buildstamp
 RUN --mount=${mountArgs} \
     --mount=type=bind,source=.,target=/var/dance-cache \
